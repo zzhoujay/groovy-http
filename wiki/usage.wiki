@@ -13,3 +13,16 @@ All libraries could be found under /lib
     * provide post() and get() methods, that takes a URI and optional a closure for execution
   * Form
     * provide submit() method, that utilize Http.post() to do submission
+
+= Usage = 
+  * Get a page
+    * Sample code:
+    {{{
+println new Http().get("http://code.google.com/p/groovy-http").text
+println new Http().get("http://code.google.com/p/groovy-http").getElement('pname').textExtractor.toString() //print: "groovy-http"
+println new Http().get("http://code.google.com/p/groovy-http"){ request, entity, client->
+  println entity.contentType
+} //print: text/html; charset=UTF-8
+println new Http().get("http://code.google.com/p/groovy-http").source //return a Jericho HTML parser Source
+}}}
+    * text is getText that print out the input stream with StringWriter
