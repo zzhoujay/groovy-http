@@ -70,12 +70,16 @@ public class HttpTests extends GroovyTestCase {
     assertEquals 'gaia', new Http().get(TEST_URL).getElement {source -> source.getElementById('gaia')}.getAttributeValue('id')
   }
 
+  void testGetElementsTwoArgs() {
+    assertTrue new Http().get(TEST_URL).getElement('td', ['id': 'project_labels']).textExtractor.toString().contains("groovy")
+  }
+
   void testGetElements() {
     assertTrue new Http().get(TEST_URL).getElements().size() > 150
     assertEquals 'div', new Http().get(TEST_URL).getElements('div').getAt(0).name
     assertEquals 'gbh', new Http().get(TEST_URL).getElements('class': 'gbh').getAt(0).getAttributeValue('class')
     def http = new Http().get(TEST_URL)
-    assertEquals http.source.getAllElements().findAll {it.name in ['a', 'div']}.size(), http.getElements(['a','div']).size()
+    assertEquals http.source.getAllElements().findAll {it.name in ['a', 'div']}.size(), http.getElements(['a', 'div']).size()
   }
 
 }
