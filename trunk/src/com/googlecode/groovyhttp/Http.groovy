@@ -172,10 +172,30 @@ public class Http {
     if (elements instanceof Collection) { return elements.getAt(0)}
   }
 
+  /**
+   * For map and collection, they return the accumulated elements
+   */
   def getElements(params) {
-    throw new UnsupportedOperationException("not implemented yet")
+    if (params == null) {
+      return getSource().getAllElements()
+    } else if (params instanceof Integer) {
+      throw new IllegalArgumentException("invalid argument, params: $params, params.class: ${params?.getClass()}")
+    } else if (params instanceof String) {
+      return getSource().getAllElements(params)
+    } else if (params instanceof Map) { // multi-entry map narrow down the scope of result
+      def elements = getSource(), result = []
+      params.entrySet().each {entry -> result += elements.getAllElements(entry.key, entry.value, false)}
+      return result;
+    } else if (params instanceof Collection) {
+      def result = []
+      params.each {result += getElements(it)}
+      return result;
+    } else if (params instanceof Closure) {
+      return callClosure(params, [getSource(), this])
+    } else {
+      throw new IllegalArgumentException("getForm() - unknown params - params: $params")
+    }
   }
-
 
   def getForm(params) {
     //TODO consider to delegate this method to Form
