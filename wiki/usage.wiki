@@ -50,6 +50,7 @@ def form = new Form(http, http.source.getAllElements("action","/hosting/search",
   * Post (without a form)
     * Sample
     {{{
+println new Http().post("http://search.yahoo.com/web",[[fr:'sfp'],[p:'groovy']]).text //proper usage, HTTP form support multiple values
 println new Http().post("http://search.yahoo.com/web",[fr:'sfp',p:'groovy']).text
 }}}
   * Post (a form)
