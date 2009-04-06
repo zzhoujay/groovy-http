@@ -43,6 +43,8 @@ public class HttpTests extends GroovyTestCase {
     def form = new Http().get(TEST_URL).getForm()
     assertNotNull(form)
     assertEquals TEST_URL, form.base.toString()
+
+    assertEquals TEST_URL, new Http().get(TEST_URL).getForm(action:'/hosting/search').base.toString()
   }
 
 
