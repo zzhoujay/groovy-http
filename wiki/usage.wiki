@@ -68,6 +68,13 @@ new Http().get("http://localhost:8080/login").getForm('loginForm').submit(userna
     * cookie is enabled by default
   * HTTP Header
     * by default, it simulates FireFox 3 on Windows Vista. It is a more sensible default than most HTTP Client.
+    * there are two ways to configure the http header, both requires usage of Apache HTTP Client API
+    {{{
+new Http(requestInceptor:{HttpRequest request, HttpContext context -> 
+  request.setHeader('User-Agent', "bot")
+} as HttpRequestInterceptor)
+
+}}}
   * Return value of methods
     * by default, most methods of Http returns 'this' (the Http instance). When a closure is supplied, the return value is determined by the closure. Users could use the third argument which is the Http instance and return it.
     * all getXXX method are for getting something other than the Http instance.
