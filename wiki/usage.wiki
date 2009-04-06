@@ -7,7 +7,9 @@ This project requires:
     * Apache Commmons Logging
   * [http://jerichohtml.sourceforge.net Jericho HTML Parser] | [http://jerichohtml.sourceforge.net/doc/api/index.html JavaDoc (2.6)], only if you use it
 
-All libraries could be found under /lib
+All libraries could be found under /lib.
+
+Before the first release, you may checkout the source from svn, copy the com.googlecode.groovyhttp.Http and com.googlecode.groovyhttp.html.Form to your project and include the required lib.
  
 = Concepts =
   * Http
