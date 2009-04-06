@@ -17,6 +17,7 @@ Before the first release, you may checkout the source from svn, copy the com.goo
     * lifecycle methods: reset(), close(), shutdown()
     * Jericho HTML methods: getSource(), getElement(), and @Delegate HttpEntity
     * Form method: getForm()
+    * Getter: httpclient, entity, uri, request, source, referer (notice that only httpclient is always available, the other are available only after relevant first usage)
     * Others: size() - first check contentLength, if is -1, check the actual length of inputStream
   * Form
     * provides submit() method, that utilize Http.post() to do submission
