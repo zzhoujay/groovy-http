@@ -44,7 +44,7 @@ def form = new Http().get("http://code.google.com/p/groovy-http/").getForm()
 
 //with constructor
 def http = new Http().get("http://code.google.com/p/groovy-http/")
-def form = new Form(http, http.getElement("action","/hosting/search")) //there are many other ways to get the form element
+def form = new Form(http, http.getElement("action":"/hosting/search")) //there are many other ways to get the form element
 }}}
     * Http.getForm(params) - if params is null, it get the first form. if params is an Integer, it get the form by index; if it is a string, it get by HTML Element ID
   * Post (without a form)
