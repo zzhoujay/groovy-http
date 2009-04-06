@@ -155,6 +155,7 @@ public class Http {
       throw new IllegalArgumentException("getElement() doesn't accept a Collection as argument")
     } else if (params instanceof Map) {
       if (params.'id') return getSource()?.getElementById(params.'id')
+      else throw new UnsupportedOperationException("not implemented yet")
     } else if (params instanceof Closure) {
       return callClosure(params, [getSource(), this])
     } else {
@@ -166,7 +167,7 @@ public class Http {
   }
 
   def getElements(params) {
-
+    throw new UnsupportedOperationException("not implemented yet")
   }
 
 
@@ -194,6 +195,7 @@ public class Http {
     this.request = null;
     this.source = null;
     this.reset = true
+    return this;
   }
 
 
@@ -202,7 +204,7 @@ public class Http {
    */
   def close() { reset(); return this; }
 
-  def shutdown() {reset(); httpclient.connectionManager.shutdown()}
+  def shutdown() {reset(); httpclient.connectionManager.shutdown(); return this}
 
 
 
