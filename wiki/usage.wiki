@@ -15,6 +15,7 @@ All libraries could be found under /lib
     * lifecycle methods: reset(), close(), shutdown()
     * Jericho HTML methods: getSource(), getElement(), and @Delegate HttpEntity
     * Form method: getForm()
+    * Others: size() - first check contentLength, if is -1, check the actual length of inputStream
   * Form
     * provides submit() method, that utilize Http.post() to do submission
     * Jericho HTML methods: @Delegate of the form element
@@ -43,4 +44,13 @@ def http = new Http().get("http://code.google.com/p/groovy-http/")
 def form = new Form(http, http.source.getAllElements("action","/hosting/search",false)) //there are many ways to get the form element
 }}}
     * Http.getForm(params) - if params is null, it get the first form. if params is an Integer, it get the form by index; if it is a string, it get by HTML Element ID
+  * Post (without a form)
+    * Sample
+    {{{
+}}}
+  * Post (a form)
+    * Sample
+    {{{
+println new Http().get("http://search.yahoo.com/").getForm().submit(p: 'Groovy HTTP').text
+}}}
   * Run the test cases to get to know how they work
