@@ -8,3 +8,4 @@
  new URL("http://www.google.com").text
 }}}
   * add the concept of base URI and support get and post to relative URI, use a Link Resolver
+  * add EMC methods for Jericho HTML Parser to make it easier to use in Groovy
