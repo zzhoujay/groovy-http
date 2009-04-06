@@ -21,7 +21,7 @@ public class FormTests extends GroovyTestCase {
   }
 
   void testYahooSearchShortForm(){
-    println new Http().get("http://search.yahoo.com").getForm().submit(p: 'Groovy HTTP').text
+    assertTrue new Http().get("http://search.yahoo.com").getForm().submit(p: 'Groovy HTTP').size() > 8000
   }
 
 
