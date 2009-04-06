@@ -29,12 +29,14 @@ public class HttpTests extends GroovyTestCase {
     assertTrue new Http().get(TEST_URL) {g, e, c -> c} instanceof Http
   }
 
+
   void testGetSize() {
     assertTrue new Http().get(TEST_URL).size() > 8000
   }
 
   void testPost() {
-    println new Http().post(TEST_URL, [[test: 'test']]).text
+    //println new Http().post(TEST_URL, [[test: 'test']]).text
+    assertTrue new Http().post("http://search.yahoo.com/web",[fr:'sfp',p:'groovy']).size() > 8000
   }
 
   void testGetForm() {

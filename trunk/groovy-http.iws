@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project relativePaths="false" version="4">
   <component name="ChangeListManager">
-    <list default="true" name="Default" comment="" />
+    <list default="true" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/googlecode/groovyhttp/html/FormTests.groovy" afterPath="$PROJECT_DIR$/test/com/googlecode/groovyhttp/html/FormTests.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/groovy-http.iws" afterPath="$PROJECT_DIR$/groovy-http.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/googlecode/groovyhttp/HttpTests.groovy" afterPath="$PROJECT_DIR$/test/com/googlecode/groovyhttp/HttpTests.groovy" />
+    </list>
     <ignored path="groovy-http.iws" />
     <ignored path=".idea/workspace.xml" />
   </component>
@@ -62,16 +66,25 @@
       <file leaf-file-name="Http.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/googlecode/groovyhttp/Http.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="62" selection-start="3140" selection-end="3140" vertical-scroll-proportion="-11.44">
+            <state line="34" column="13" selection-start="1423" selection-end="1423" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HttpTests.groovy" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="HttpTests.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/com/googlecode/groovyhttp/HttpTests.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="8" selection-start="1528" selection-end="1528" vertical-scroll-proportion="0.6354776">
+            <state line="6" column="13" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Log4j.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/com/googlecode/groovyhttp/Log4j.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="64" selection-start="680" selection-end="680" vertical-scroll-proportion="0.63457763">
               <folding />
             </state>
           </provider>
@@ -80,7 +93,7 @@
       <file leaf-file-name="FormTests.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/com/googlecode/groovyhttp/html/FormTests.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="65" selection-start="297" selection-end="297" vertical-scroll-proportion="0.0">
+            <state line="4" column="13" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -89,7 +102,7 @@
       <file leaf-file-name="Form.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/googlecode/groovyhttp/html/Form.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="9" selection-start="487" selection-end="487" vertical-scroll-proportion="0.0">
+            <state line="16" column="29" selection-start="538" selection-end="538" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -285,7 +298,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="RunManagerConfig.showSettingsBeforeRunnig" value="false" />
-    <property name="options.lastSelected" value="errors" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="GoToClass.includeJavaFiles" value="false" />
@@ -293,12 +306,12 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
-  <component name="RunManager" selected="JUnit.FormTests.testGetForm">
-    <tempConfiguration default="false" name="FormTests.testGetForm" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
+  <component name="RunManager" selected="JUnit.FormTests.testYahooSearchShortForm">
+    <tempConfiguration default="false" name="FormTests.testYahooSearchShortForm" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
       <pattern>
         <option name="PATTERN" value="com.googlecode.groovyhttp.html.*" />
         <option name="ENABLED" value="true" />
@@ -308,7 +321,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.googlecode.groovyhttp.html" />
       <option name="MAIN_CLASS_NAME" value="com.googlecode.groovyhttp.html.FormTests" />
-      <option name="METHOD_NAME" value="testGetForm" />
+      <option name="METHOD_NAME" value="testYahooSearchShortForm" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -378,7 +391,7 @@
       <envs />
     </configuration>
     <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.FormTests.testGetForm" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.FormTests.testYahooSearchShortForm" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -424,7 +437,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1688" height="1058" extended-state="6" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
@@ -442,11 +455,11 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.58907104" order="0" side_tool="false" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5898567" order="0" side_tool="false" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Web Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40327868" sideWeight="0.5" order="2" side_tool="false" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4024256" sideWeight="0.5" order="2" side_tool="false" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" />
       <window_info id="JProfiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
@@ -486,13 +499,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/com/googlecode/groovyhttp/Log4j.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="58" selection-start="679" selection-end="679" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/httpclient-4.0-beta2.jar!/org/apache/http/impl/client/AbstractHttpClient.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="163" column="0" selection-start="11908" selection-end="11908" vertical-scroll-proportion="0.798419">
@@ -502,28 +508,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/googlecode/groovyhttp/html/Form.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="9" selection-start="487" selection-end="487" vertical-scroll-proportion="0.0">
+        <state line="16" column="29" selection-start="538" selection-end="538" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/googlecode/groovyhttp/Http.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="62" selection-start="3140" selection-end="3140" vertical-scroll-proportion="-11.44">
+        <state line="34" column="13" selection-start="1423" selection-end="1423" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/googlecode/groovyhttp/html/FormTests.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="65" selection-start="297" selection-end="297" vertical-scroll-proportion="0.0">
+        <state line="4" column="13" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/googlecode/groovyhttp/HttpTests.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="8" selection-start="1528" selection-end="1528" vertical-scroll-proportion="0.6354776">
+        <state line="6" column="13" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/googlecode/groovyhttp/Log4j.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="64" selection-start="680" selection-end="680" vertical-scroll-proportion="0.63457763">
           <folding />
         </state>
       </provider>

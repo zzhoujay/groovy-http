@@ -9,7 +9,7 @@ public class FormTests extends GroovyTestCase {
     assertEquals "Search projects", form.getAllElements("type", "submit", false)?.getAt(0)?.getAttributeValue("value")
   }
 
-  void testGoogle() {
+  void testYahooSearch() {
     def anchors = new Http().get("http://search.yahoo.com/").getForm().submit(p: 'Groovy HTTP').getElement('web').getAllElements("class", "yschttl spt", false)
     anchors.eachWithIndex {a, i ->
       def text = a.textExtractor.toString()
@@ -19,5 +19,11 @@ public class FormTests extends GroovyTestCase {
     assertEquals 10, anchors.size()
 
   }
+
+  void testYahooSearchShortForm(){
+    println new Http().get("http://search.yahoo.com").getForm().submit(p: 'Groovy HTTP').text
+  }
+
+
 
 }
