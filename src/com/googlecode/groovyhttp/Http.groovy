@@ -49,10 +49,10 @@ public class Http {
   def Http(Map params = null) {
     httpclient = new DefaultHttpClient()
     httpclient.addRequestInterceptor(params?.'requestInterceptor' ?: {HttpRequest request, HttpContext context ->
-      request.setHeader('User-Agent', params?.'User-Agent'?:USER_AGENT)
-      request.setHeader('Accept', params?.'Accept'?:"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
-      request.setHeader('Accept-Language', params?.'Accept-Language'?:"en-us,en;q=0.5")
-      request.setHeader('Accept-Encoding', params?.'Accept-Encoding'?:"ISO-8859-1,utf-8;q=0.7,*;q=0.7")
+      request.setHeader('User-Agent', params?.'User-Agent' ?: USER_AGENT)
+      request.setHeader('Accept', params?.'Accept' ?: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
+      request.setHeader('Accept-Language', params?.'Accept-Language' ?: "en-us,en;q=0.5")
+      request.setHeader('Accept-Encoding', params?.'Accept-Encoding' ?: "ISO-8859-1,utf-8;q=0.7,*;q=0.7")
     } as HttpRequestInterceptor)
     if (params?.containsKey('buffer')) this.enableBuffer = params.'buffer'
     if (params?.'responseInterceptor' && params.'responseInterceptor' instanceof HttpResponseInterceptor) {
@@ -176,14 +176,21 @@ public class Http {
 
 
   def getForm(params) {
+    //TODO consider to delegate this method to Form
+    //TODO refactor this to a generic get element
     if (params == null) {
       return new Form(this, getSource().getAllElements(HTMLElementName.FORM)?.getAt(0))
     } else if (params instanceof Integer) {
       return new Form(this, getSource().getAllElements(HTMLElementName.FORM)?.getAt(params))
     } else if (params instanceof String) {
-      return new Form(this, getSource().getElementById(params))
+      def source = getSource()
+      def formElement = source.getElementById(params) ?: source.getAllElement('name', params, false)?.getAt(0)
+      return new Form(this, formElement)
     } else if (params instanceof Map) {
-      throw new UnsupportedOperationException("not implemented yet")
+      if (params.size() == 1) {
+        def entries = params.entrySet().toArray(), key = entries[0].key, value = entries[0].value
+        return new Form(this, getSource().getAllElements(key, value, false)?.getAt(0))
+      } else throw new UnsupportedOperationException("multiple value map is not implemented")
     } else {
       throw new IllegalArgumentException("getForm() - unknown params - params: $params")
     }
