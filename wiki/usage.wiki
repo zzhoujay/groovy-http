@@ -87,4 +87,4 @@ new Http(requestInceptor:{HttpRequest request, HttpContext context ->
 println(new Http().get("http://code.google.com/p/groovy-http").entity.content instanceof InputStream) //println: true
 }}}
 = Reference = 
-  * Please also check the [http://groovy.codehaus.org/modules/http-builder/ Groovy HTTP Builder] project which provides similar functionalities
+  * Please also check the [http://groovy.codehaus.org/modules/http-builder/ Groovy HTTP Builder] project which is more mature and provides similar functionality
