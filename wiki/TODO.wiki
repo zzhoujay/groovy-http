@@ -1,3 +1,4 @@
 = TODO list =
   * create maven pom and build scripts
   * implement more getElement and getElements usage
+  * add license, this project uses Apache 2 license
