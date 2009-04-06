@@ -26,7 +26,7 @@ All libraries could be found under /lib
     {{{
 println new Http().get("http://code.google.com/p/groovy-http").text
 println new Http().get("http://code.google.com/p/groovy-http").getElement('pname').textExtractor.toString() //print: "groovy-http"
-println new Http().get("http://code.google.com/p/groovy-http"){ request, entity, client->
+println new Http().get("http://code.google.com/p/groovy-http"){ request, entity, client-> // optionally use 0 to 3 argument(s)
   println entity.contentType
 } //print: text/html; charset=UTF-8
 println new Http().get("http://code.google.com/p/groovy-http").source //return a Jericho HTML parser Source
