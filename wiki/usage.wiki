@@ -66,3 +66,6 @@ println new Http().get("http://search.yahoo.com").getForm().submit(p: 'Groovy HT
   * Return value of methods
     * by default, most methods of Http returns 'this' (the Http instance). When a closure is supplied, the return value is determined by the closure. Users could use the third argument which is the Http instance and return it.
     * all getXXX method are for getting something other than the Http instance.
+
+= Reference = 
+  * Please also check the [http://groovy.codehaus.org/HTTP+Builder Groovy Http Builder] project which provides similar functionalities
