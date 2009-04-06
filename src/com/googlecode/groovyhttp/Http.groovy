@@ -178,6 +178,12 @@ public class Http {
     return getElements(tag).findAll {it.getAttributeValue(entry.key) == entry.value}?.getAt(0)
   }
 
+  def getElements(String tag, Map attrs) {
+    if (attrs?.size() != 1) throw new UnsupportedOperationException("attrs must contain exactly 1 entry")
+    def entry = attrs.entrySet().toList()?.getAt(0)
+    return getElements(tag).findAll {it.getAttributeValue(entry.key) == entry.value}
+  }
+
   /**
    * For map and collection, they return the accumulated elements
    */

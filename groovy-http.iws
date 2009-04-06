@@ -66,7 +66,7 @@
       <file leaf-file-name="Http.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/googlecode/groovyhttp/Http.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="178" column="48" selection-start="7517" selection-end="7517" vertical-scroll-proportion="0.0">
+            <state line="193" column="31" selection-start="8059" selection-end="8059" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -75,7 +75,7 @@
       <file leaf-file-name="HttpTests.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/com/googlecode/groovyhttp/HttpTests.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="9" selection-start="2225" selection-end="2225" vertical-scroll-proportion="0.5250291">
+            <state line="77" column="32" selection-start="2746" selection-end="2746" vertical-scroll-proportion="0.76251453">
               <folding />
             </state>
           </provider>
@@ -477,7 +477,7 @@
     <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="added getElements() and test case" />
+    <option name="LAST_COMMIT_MESSAGE" value="added getElements(tag, attrs) and test case" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -494,6 +494,8 @@
     <MESSAGE value="implemented alternative getForm argument" />
     <MESSAGE value="refactored getForm to getElement" />
     <MESSAGE value="added getElements() and test case" />
+    <MESSAGE value="added getElement(tag, attrs) and test case" />
+    <MESSAGE value="added getElements(tag, attrs) and test case" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -537,14 +539,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/googlecode/groovyhttp/Http.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="48" selection-start="7517" selection-end="7517" vertical-scroll-proportion="0.0">
+        <state line="193" column="31" selection-start="8059" selection-end="8059" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/googlecode/groovyhttp/HttpTests.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="9" selection-start="2225" selection-end="2225" vertical-scroll-proportion="0.5250291">
+        <state line="77" column="32" selection-start="2746" selection-end="2746" vertical-scroll-proportion="0.76251453">
           <folding />
         </state>
       </provider>

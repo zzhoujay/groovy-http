@@ -70,8 +70,12 @@ public class HttpTests extends GroovyTestCase {
     assertEquals 'gaia', new Http().get(TEST_URL).getElement {source -> source.getElementById('gaia')}.getAttributeValue('id')
   }
 
-  void testGetElementsTwoArgs() {
+  void testGetElementTwoArgs() {
     assertTrue new Http().get(TEST_URL).getElement('td', ['id': 'project_labels']).textExtractor.toString().contains("groovy")
+  }
+
+  void testGetElementsTwoArgs() {
+    assertTrue new Http().get(TEST_URL).getElements('td', ['id': 'project_labels'])?.getAt(0).textExtractor.toString().contains("groovy")
   }
 
   void testGetElements() {
