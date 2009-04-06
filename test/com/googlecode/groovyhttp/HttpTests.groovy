@@ -3,6 +3,7 @@ package com.googlecode.groovyhttp
 import org.apache.http.client.methods.HttpGet
 import org.apache.http.HttpEntity
 import net.htmlparser.jericho.HTMLElementName
+import net.htmlparser.jericho.Source
 
 public class HttpTests extends GroovyTestCase {
   static TEST_URL = "http://code.google.com/p/groovy-http/"
@@ -36,7 +37,7 @@ public class HttpTests extends GroovyTestCase {
 
   void testPost() {
     //println new Http().post(TEST_URL, [[test: 'test']]).text
-    assertTrue new Http().post("http://search.yahoo.com/web",[fr:'sfp',p:'groovy']).size() > 8000
+    assertTrue new Http().post("http://search.yahoo.com/web", [fr: 'sfp', p: 'groovy']).size() > 8000
   }
 
   void testGetForm() {
@@ -44,7 +45,7 @@ public class HttpTests extends GroovyTestCase {
     assertNotNull(form)
     assertEquals TEST_URL, form.base.toString()
 
-    assertEquals TEST_URL, new Http().get(TEST_URL).getForm(action:'/hosting/search').base.toString()
+    assertEquals TEST_URL, new Http().get(TEST_URL).getForm(action: '/hosting/search').base.toString()
   }
 
 
@@ -57,4 +58,24 @@ public class HttpTests extends GroovyTestCase {
       println "$i\t$form"
     }
   }
+
+  void testGetElement() {
+    assertTrue new Http().get(TEST_URL).getElement() instanceof Source
+    assertEquals 'gaia', new Http().get(TEST_URL).getElement('gaia').getAttributeValue('id')
+    assertEquals 'gbh', new Http().get(TEST_URL).getElement('class': 'gbh').getAttributeValue('class')
+    try {
+      assertEquals 'gbh', new Http().get(TEST_URL).getElement(['class', 'gbh'])
+      fail("pass in a collection should throw exception")
+    } catch (e) {}
+    assertEquals 'gaia', new Http().get(TEST_URL).getElement {source -> source.getElementById('gaia')}.getAttributeValue('id')
+  }
+
+  void testGetElements() {
+    assertTrue new Http().get(TEST_URL).getElements().size() > 150
+    assertEquals 'div', new Http().get(TEST_URL).getElements('div').getAt(0).name
+    assertEquals 'gbh', new Http().get(TEST_URL).getElements('class': 'gbh').getAt(0).getAttributeValue('class')
+    def http = new Http().get(TEST_URL)
+    assertEquals http.source.getAllElements().findAll {it.name in ['a', 'div']}.size(), http.getElements(['a','div']).size()
+  }
+
 }
