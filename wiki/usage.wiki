@@ -73,7 +73,8 @@ new Http().get("http://localhost:8080/login").getForm('loginForm').submit(userna
 new Http(requestInceptor:{HttpRequest request, HttpContext context -> 
   request.setHeader('User-Agent', "bot")
 } as HttpRequestInterceptor)
-
+    //for User-Agent, Accept, Accept-Language, and Accept-Encoding
+ new Http('User-Agent':'crawler')
 }}}
   * Return value of methods
     * by default, most methods of Http returns 'this' (the Http instance). When a closure is supplied, the return value is determined by the closure. Users could use the third argument which is the Http instance and return it.
