@@ -215,7 +215,7 @@
   </component>
   <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectKey">
-    <option name="state" value="project://C:\temp\groovy-http\groovy-http.ipr" />
+    <option name="state" value="https://groovy-http.googlecode.com/svn/trunk/groovy-http.ipr" />
   </component>
   <component name="ProjectModuleManager">
     <modules>
@@ -244,7 +244,7 @@
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="svn" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
 </project>
