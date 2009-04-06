@@ -1,0 +1,7 @@
+#labels usage
+= Dependency =
+This project requires:
+  * Apache HTTP Client
+    * [http://hc.apache.org/httpcomponents-core Core] | [http://hc.apache.org/httpcomponents-core/httpcore/apidocs/index.html JavaDoc]
+    * [http://hc.apache.org/httpcomponents-client/index.html Client] | [http://hc.apache.org/httpcomponents-client/httpclient/apidocs/index.html JavaDoc]
+  * [http://jerichohtml.sourceforge.net Jericho HTML Parser] | [http://jerichohtml.sourceforge.net/doc/api/index.html JavaDoc (2.6)]
