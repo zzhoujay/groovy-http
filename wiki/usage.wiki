@@ -68,4 +68,4 @@ println new Http().get("http://search.yahoo.com").getForm().submit(p: 'Groovy HT
     * all getXXX method are for getting something other than the Http instance.
 
 = Reference = 
-  * Please also check the [http://groovy.codehaus.org/HTTP+Builder Groovy HTTP Builder] project which provides similar functionalities
+  * Please also check the [http://groovy.codehaus.org/modules/http-builder/ Groovy HTTP Builder] project which provides similar functionalities
