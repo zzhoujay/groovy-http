@@ -1,0 +1,3 @@
+= TODO list =
+  * create maven pom and build scripts
+  * implement more getElement and getElements usage
