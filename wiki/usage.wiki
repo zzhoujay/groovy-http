@@ -47,10 +47,17 @@ def form = new Form(http, http.source.getAllElements("action","/hosting/search",
   * Post (without a form)
     * Sample
     {{{
+println new Http().post("http://search.yahoo.com/web",[fr:'sfp',p:'groovy']).text
 }}}
   * Post (a form)
     * Sample
     {{{
-println new Http().get("http://search.yahoo.com/").getForm().submit(p: 'Groovy HTTP').text
+println new Http().get("http://search.yahoo.com").getForm().submit(p: 'Groovy HTTP').text
 }}}
   * Run the test cases to get to know how they work
+
+= Advanced Concepts =
+  * Cookie
+    ** cookie is enabled by default
+  * HTTP Header
+    ** by default, it simulates FireFox 3 on Windows Vista. It is a more sensible default than most HTTP Client.
