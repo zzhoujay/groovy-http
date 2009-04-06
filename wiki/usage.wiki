@@ -13,10 +13,11 @@ All libraries could be found under /lib
   * Http
     * mainly provides post() and get() methods, that takes a URI and optional a closure for execution
     * lifecycle methods: reset(), close(), shutdown()
-    * Jericho HTML methods: getSource(), getElement()
+    * Jericho HTML methods: getSource(), getElement(), and @Delegate HttpEntity
     * Form method: getForm()
   * Form
     * provides submit() method, that utilize Http.post() to do submission
+    * Jericho HTML methods: @Delegate of the form element
 
 = Usage = 
   * Get a page
