@@ -66,7 +66,7 @@
       <file leaf-file-name="Http.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/googlecode/groovyhttp/Http.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="191" column="20" selection-start="8041" selection-end="8041" vertical-scroll-proportion="0.0">
+            <state line="178" column="48" selection-start="7517" selection-end="7517" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -75,7 +75,7 @@
       <file leaf-file-name="HttpTests.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/com/googlecode/groovyhttp/HttpTests.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="124" selection-start="2968" selection-end="2968" vertical-scroll-proportion="1.5231389">
+            <state line="65" column="9" selection-start="2225" selection-end="2225" vertical-scroll-proportion="0.5250291">
               <folding />
             </state>
           </provider>
@@ -84,7 +84,7 @@
       <file leaf-file-name="Log4j.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/com/googlecode/groovyhttp/Log4j.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="64" selection-start="680" selection-end="680" vertical-scroll-proportion="0.0">
+            <state line="24" column="1" selection-start="34" selection-end="686" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -306,12 +306,12 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
-  <component name="RunManager" selected="JUnit.HttpTests.testGetElements">
-    <tempConfiguration default="false" name="HttpTests.testGetElements" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
+  <component name="RunManager" selected="JUnit.HttpTests.testGetElementsTwoArgs">
+    <tempConfiguration default="false" name="HttpTests.testGetElementsTwoArgs" type="JUnit" factoryName="JUnit" enabled="false" merge="false" runner="emma">
       <pattern>
         <option name="PATTERN" value="com.googlecode.groovyhttp.*" />
         <option name="ENABLED" value="true" />
@@ -321,7 +321,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.googlecode.groovyhttp" />
       <option name="MAIN_CLASS_NAME" value="com.googlecode.groovyhttp.HttpTests" />
-      <option name="METHOD_NAME" value="testGetElements" />
+      <option name="METHOD_NAME" value="testGetElementsTwoArgs" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -391,7 +391,7 @@
       <envs />
     </configuration>
     <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.HttpTests.testGetElements" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.HttpTests.testGetElementsTwoArgs" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -437,8 +437,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1688" height="1028" extended-state="0" />
-    <editor active="false" />
+    <frame x="-4" y="-4" width="1688" height="1028" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
@@ -457,7 +457,7 @@
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Web Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40112993" sideWeight="0.5" order="2" side_tool="false" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40112993" sideWeight="0.5" order="2" side_tool="false" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" />
@@ -514,13 +514,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/googlecode/groovyhttp/Log4j.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="64" selection-start="680" selection-end="680" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/com/googlecode/groovyhttp/html/FormTests.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="13" selection-start="805" selection-end="805" vertical-scroll-proportion="0.0">
@@ -535,16 +528,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/googlecode/groovyhttp/Log4j.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="1" selection-start="34" selection-end="686" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/googlecode/groovyhttp/Http.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="191" column="20" selection-start="8041" selection-end="8041" vertical-scroll-proportion="0.0">
+        <state line="178" column="48" selection-start="7517" selection-end="7517" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/googlecode/groovyhttp/HttpTests.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="124" selection-start="2968" selection-end="2968" vertical-scroll-proportion="1.5231389">
+        <state line="65" column="9" selection-start="2225" selection-end="2225" vertical-scroll-proportion="0.5250291">
           <folding />
         </state>
       </provider>
