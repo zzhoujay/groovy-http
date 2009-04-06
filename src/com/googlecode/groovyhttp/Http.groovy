@@ -158,8 +158,10 @@ public class Http {
     } else if (params instanceof Collection) {
       throw new IllegalArgumentException("getElement() doesn't accept a Collection as argument")
     } else if (params instanceof Map) {
-      if (params.'id') return getSource()?.getElementById(params.'id')
-      else throw new UnsupportedOperationException("not implemented yet")
+      if (params.size() == 1) {
+        def entries = params.entrySet().toArray(), key = entries[0].key, value = entries[0].value
+        return getSource().getAllElements(key, value, false)?.getAt(0)
+      } else throw new UnsupportedOperationException("multiple value map is not implemented")
     } else if (params instanceof Closure) {
       return callClosure(params, [getSource(), this])
     } else {
@@ -187,10 +189,7 @@ public class Http {
       def formElement = source.getElementById(params) ?: source.getAllElement('name', params, false)?.getAt(0)
       return new Form(this, formElement)
     } else if (params instanceof Map) {
-      if (params.size() == 1) {
-        def entries = params.entrySet().toArray(), key = entries[0].key, value = entries[0].value
-        return new Form(this, getSource().getAllElements(key, value, false)?.getAt(0))
-      } else throw new UnsupportedOperationException("multiple value map is not implemented")
+      return new Form(this, getElement(params))
     } else {
       throw new IllegalArgumentException("getForm() - unknown params - params: $params")
     }
