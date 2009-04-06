@@ -56,6 +56,11 @@ println new Http().post("http://search.yahoo.com/web",[fr:'sfp',p:'groovy']).tex
     {{{
 println new Http().get("http://search.yahoo.com").getForm().submit(p: 'Groovy HTTP').text
 }}}
+  * Complex example: fetch a page, submit a form, and request another page in the same session
+    * sample
+    {{{
+new Http().get("http://localhost/login").getForm('loginForm').submit(username:'foo',password:'bar').get("http://localhost/list").text
+}}}
   * Run the test cases to get to know how they work
 
 = Advanced Concepts =
