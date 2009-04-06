@@ -7,7 +7,7 @@ This project requires:
     * Apache Commmons Logging
   * [http://jerichohtml.sourceforge.net Jericho HTML Parser] | [http://jerichohtml.sourceforge.net/doc/api/index.html JavaDoc (2.6)], only if you use it
 
-All libraries could be found under [http://code.google.com/p/groovy-http/source/browse/#svn/trunk/lib /lib]. You are highly recommended to get familiar with the Apache HTTP Client and Core API
+Remarks: You are highly recommended to get familiar with the Apache HTTP Client and Core API to get best result.
  
 = Concepts =
   * Http
@@ -22,7 +22,7 @@ All libraries could be found under [http://code.google.com/p/groovy-http/source/
     * Jericho HTML methods: @Delegate of the form element
 
 = Usage = 
-  * put the main jar and any depending jars in your classpath
+  * put the main jar and any depending jars in your classpath. The depending jars could be found at [http://code.google.com/p/groovy-http/source/browse/#svn/trunk/lib /lib].
   * Get a page
     * Sample code:
     {{{
