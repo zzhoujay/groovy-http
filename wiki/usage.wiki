@@ -59,7 +59,7 @@ println new Http().get("http://search.yahoo.com").getForm().submit(p: 'Groovy HT
   * Complex example: fetch a page, submit a form, and request another page in the same session ... and do it fluently in a single line
     * sample
     {{{
-new Http().get("http://localhost/login").getForm('loginForm').submit(username:'foo',password:'bar').get("http://localhost/list").text
+new Http().get("http://localhost/login").getForm('loginForm').submit(username:'foo',password:'bar').get("http://localhost/securePage").text
 }}}
   * Run the test cases to get to know how they work
 
