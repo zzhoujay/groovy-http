@@ -19,6 +19,7 @@ import org.apache.http.impl.client.DefaultHttpClient
 import org.apache.http.message.BasicNameValuePair
 import org.apache.http.protocol.HTTP
 import org.apache.http.protocol.HttpContext
+import org.apache.http.HttpResponseInterceptor
 
 /**
  * This HTTP Client is designed to provide a set of very simple API for use in Groovy.
@@ -48,12 +49,15 @@ public class Http {
   def Http(Map params = null) {
     httpclient = new DefaultHttpClient()
     httpclient.addRequestInterceptor(params?.'requestInterceptor' ?: {HttpRequest request, HttpContext context ->
-      request.setHeader('User-Agent', USER_AGENT)
-      request.setHeader('Accept', "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
-      request.setHeader('Accept-Language', "en-us,en;q=0.5")
-      request.setHeader('Accept-Encoding', "ISO-8859-1,utf-8;q=0.7,*;q=0.7")
+      request.setHeader('User-Agent', params.'User-Agent'?:USER_AGENT)
+      request.setHeader('Accept', params.'Accept'?:"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
+      request.setHeader('Accept-Language', params.'Accept-Language'?:"en-us,en;q=0.5")
+      request.setHeader('Accept-Encoding', params.'Accept-Encoding'?:"ISO-8859-1,utf-8;q=0.7,*;q=0.7")
     } as HttpRequestInterceptor)
     if (params?.containsKey('buffer')) this.enableBuffer = params.'buffer'
+    if (params.'responseInterceptor' && params.'responseInterceptor' instanceof HttpResponseInterceptor) {
+      httpclient.addResponseInterceptor(params.'responseInterceptor')
+    }
     /* httpclient.addResponseInterceptor(params?.'requestInterceptor' ?: {HttpResponse response, HttpContext context ->
     if (logger.isTraceEnabled()) logger.trace("\t[response] - header.'Set-Cookie': ${response.getHeaders('Set-Cookie')}")
   } as HttpResponseInterceptor)*/
