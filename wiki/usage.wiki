@@ -58,6 +58,9 @@ println new Http().get("http://search.yahoo.com").getForm().submit(p: 'Groovy HT
 
 = Advanced Concepts =
   * Cookie
-    ** cookie is enabled by default
+    * cookie is enabled by default
   * HTTP Header
-    ** by default, it simulates FireFox 3 on Windows Vista. It is a more sensible default than most HTTP Client.
+    * by default, it simulates FireFox 3 on Windows Vista. It is a more sensible default than most HTTP Client.
+  * Return value of methods
+    * by default, most methods of Http returns 'this' (the Http instance). When a closure is supplied, the return value is determined by the closure. Users could use the third argument which is the Http instance and return it.
+    * all getXXX method are for getting something other than the Http instance.
