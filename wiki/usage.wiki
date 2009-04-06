@@ -8,8 +8,6 @@ This project requires:
   * [http://jerichohtml.sourceforge.net Jericho HTML Parser] | [http://jerichohtml.sourceforge.net/doc/api/index.html JavaDoc (2.6)], only if you use it
 
 All libraries could be found under [http://code.google.com/p/groovy-http/source/browse/#svn/trunk/lib /lib]. You are highly recommended to get familiar with the Apache HTTP Client and Core API
-
-Before the first release, you may checkout the source from svn, copy the com.googlecode.groovyhttp.Http and com.googlecode.groovyhttp.html.Form to your project and include the required lib.
  
 = Concepts =
   * Http
@@ -24,6 +22,7 @@ Before the first release, you may checkout the source from svn, copy the com.goo
     * Jericho HTML methods: @Delegate of the form element
 
 = Usage = 
+  * put the main jar and any depending jars in your classpath
   * Get a page
     * Sample code:
     {{{
