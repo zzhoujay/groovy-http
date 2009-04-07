@@ -49,10 +49,13 @@ public class Http {
   def Http(Map params = null) {
     httpclient = new DefaultHttpClient()
     httpclient.addRequestInterceptor(params?.'requestInterceptor' ?: {HttpRequest request, HttpContext context ->
-      request.setHeader('User-Agent', params?.'User-Agent' ?: USER_AGENT)
-      request.setHeader('Accept', params?.'Accept' ?: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
-      request.setHeader('Accept-Language', params?.'Accept-Language' ?: "en-us,en;q=0.5")
-      request.setHeader('Accept-Encoding', params?.'Accept-Encoding' ?: "ISO-8859-1,utf-8;q=0.7,*;q=0.7")
+      request.setHeader('User-Agent', params?.'User-Agent' ?: System.getProperty('http.user-agent') ?: USER_AGENT)
+      if (params.containsKey('Accept') || System.getProperty('http.accept'))
+        request.setHeader('Accept', params?.'Accept' ?: System.getProperty('http.accept') ?: System.getProperty('http.accept') ?: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
+      if (params.containsKey('Accept-Language') || System.getProperty('http.accept-language'))
+        request.setHeader('Accept-Language', params?.'Accept-Language' ?: System.getProperty('http.accept-language') ?: "en-us,en;q=0.5")
+      if (params.containsKey('Accept-Encoding') || System.getProperty('http.accept-encoding'))
+        request.setHeader('Accept-Encoding', params?.'Accept-Encoding' ?: System.getProperty('http.accept-encoding') ?: "ISO-8859-1,utf-8;q=0.7,*;q=0.7")
     } as HttpRequestInterceptor)
     if (params?.containsKey('buffer')) this.enableBuffer = params.'buffer'
     if (params?.'responseInterceptor' && params.'responseInterceptor' instanceof HttpResponseInterceptor) {
