@@ -86,4 +86,8 @@ public class HttpTests extends GroovyTestCase {
     assertEquals http.source.getAllElements().findAll {it.name in ['a', 'div']}.size(), http.getElements(['a', 'div']).size()
   }
 
+  void testDev(){
+    println new Http().httpclient.connectionKeepAliveStrategy
+  }
+
 }
