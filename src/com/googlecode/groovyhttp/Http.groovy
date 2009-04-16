@@ -155,7 +155,7 @@ public class Http {
   /**
    * if params = null, return the root 'html' element
    */
-  def getElement(params) {
+  def getElement(params=null) {
     if (params == null) {
       return getSource();
     } else if (params instanceof Collection) {
@@ -190,7 +190,7 @@ public class Http {
   /**
    * For map and collection, they return the accumulated elements
    */
-  def getElements(params) {
+  def getElements(params=null) {
     if (params == null) {
       return getSource().getAllElements()
     } else if (params instanceof Integer) {
