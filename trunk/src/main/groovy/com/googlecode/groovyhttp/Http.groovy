@@ -20,6 +20,7 @@ import org.apache.http.message.BasicNameValuePair
 import org.apache.http.protocol.HTTP
 import org.apache.http.protocol.HttpContext
 import org.apache.http.HttpResponseInterceptor
+import org.apache.http.HttpResponse
 
 /**
  * This HTTP Client is designed to provide a set of very simple API for use in Groovy.
@@ -42,6 +43,7 @@ public class Http {
   def enableBuffer = true, reset = false
   def referer, uri, request, source;// instance of the last fetched HTTP elements
   @Delegate HttpEntity entity;
+  @Delegate HttpResponse response;
 
   /**
    * Accepted params
@@ -78,7 +80,7 @@ public class Http {
     if (referer) request.setHeader('Referer', referer)
 
 
-    def response = httpclient.execute(request)
+    response = httpclient.execute(request)
     if (logger.isDebugEnabled()) logger.debug("post() - uri: $uri, cookies.size(): ${httpclient.cookieStore.cookies?.size()}, nameValues: $nameValues")
     entity = enableBuffer ? new BufferedHttpEntity(response.getEntity()) : response.getEntity()
     this.reset = false;
@@ -95,7 +97,7 @@ public class Http {
     request = new HttpGet(uri)
     if (referer) request.setHeader('Referer', uri.toString())
     if (logger.isDebugEnabled()) logger.debug("get() - uri: $uri, cookies.size(): ${httpclient.cookieStore.cookies?.size()}")
-    def response = httpclient.execute(request)
+    response = httpclient.execute(request)
     entity = enableBuffer ? new BufferedHttpEntity(response.getEntity()) : response.getEntity()
     this.reset = false;
     if (closure) {
@@ -239,6 +241,7 @@ public class Http {
     this.referer = uri?.toString();
     this.uri = null;
     this.request = null;
+    this.response = null;
     this.source = null;
     this.reset = true
     return this;
