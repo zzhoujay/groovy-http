@@ -222,7 +222,7 @@
   </component>
   <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectKey">
-    <option name="state" value="https://groovy-http.googlecode.com/svn/trunk/groovy-http.ipr" />
+    <option name="state" value="project://D:\projects\intellij-groovy\groovy-http\groovy-http.ipr" />
   </component>
   <component name="ProjectModuleManager">
     <modules>
@@ -387,17 +387,6 @@
         <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.8/log4j-1.2.8-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: net.htmlparser.jericho:jericho-html:3.0">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/net/htmlparser/jericho/jericho-html/3.0/jericho-html-3.0.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/net/htmlparser/jericho/jericho-html/3.0/jericho-html-3.0-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/net/htmlparser/jericho/jericho-html/3.0/jericho-html-3.0-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: org.apache.httpcomponents:httpcore:4.0">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.0/httpcore-4.0.jar!/" />
@@ -429,6 +418,17 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.3/commons-codec-1.3-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: net.htmlparser.jericho:jericho-html:3.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/net/htmlparser/jericho/jericho-html/3.0/jericho-html-3.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/net/htmlparser/jericho/jericho-html/3.0/jericho-html-3.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/net/htmlparser/jericho/jericho-html/3.0/jericho-html-3.0-sources.jar!/" />
       </SOURCES>
     </library>
   </component>
