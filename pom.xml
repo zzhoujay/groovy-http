@@ -6,7 +6,7 @@
     <artifactId>groovy-http</artifactId>
     <version>0.1</version>
     <url>http://code.google.com/p/groovy-http/</url>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <licenses>
         <license>
             <name>Apache License</name>
