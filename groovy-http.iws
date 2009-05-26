@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project relativePaths="false" version="4">
   <component name="ChangeListManager">
-    <list default="true" readonly="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/groovy-http.iws" afterPath="$PROJECT_DIR$/groovy-http.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/groovy-http.ipr" afterPath="$PROJECT_DIR$/groovy-http.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/groovy-http.iml" afterPath="$PROJECT_DIR$/groovy-http.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/googlecode/groovyhttp/Http.groovy" afterPath="$PROJECT_DIR$/src/com/googlecode/groovyhttp/Http.groovy" />
-    </list>
+    <list default="true" readonly="true" name="Default" comment="" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="groovy-http.iws" />
   </component>
@@ -68,7 +62,7 @@
       <file leaf-file-name="Http.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/googlecode/groovyhttp/Http.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="88" selection-start="1528" selection-end="1528" vertical-scroll-proportion="0.0">
+            <state line="43" column="22" selection-start="1926" selection-end="1926" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -77,7 +71,7 @@
       <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="21" selection-start="1514" selection-end="1514" vertical-scroll-proportion="0.9467919">
+            <state line="41" column="21" selection-start="1506" selection-end="1506" vertical-scroll-proportion="0.9201878">
               <folding />
             </state>
           </provider>
@@ -156,6 +150,24 @@
         <PATH_ELEMENT>
           <option name="myItemId" value="Libraries" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="groovy-http" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="groovy-http" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="lib" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
       <PATH>
@@ -523,14 +535,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/googlecode/groovyhttp/Http.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="88" selection-start="1528" selection-end="1528" vertical-scroll-proportion="0.0">
+        <state line="43" column="22" selection-start="1926" selection-end="1926" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="21" selection-start="1514" selection-end="1514" vertical-scroll-proportion="0.9467919">
+        <state line="41" column="21" selection-start="1506" selection-end="1506" vertical-scroll-proportion="0.9201878">
           <folding />
         </state>
       </provider>
