@@ -1,0 +1,4 @@
+
+2009-05-26      0.1
+  - first release, provide basic HTTP Get and Post, and data extraction base on Jericho HTML Parser
+  - support Maven
