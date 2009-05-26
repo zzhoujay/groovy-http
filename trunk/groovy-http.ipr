@@ -387,6 +387,28 @@
         <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.8/log4j-1.2.8-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: org.apache.httpcomponents:httpcomponents-client:4.0-beta2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcomponents-client/4.0-beta2/httpcomponents-client-4.0-beta2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcomponents-client/4.0-beta2/httpcomponents-client-4.0-beta2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcomponents-client/4.0-beta2/httpcomponents-client-4.0-beta2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.httpcomponents:httpcomponents-core:4.0">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcomponents-core/4.0/httpcomponents-core-4.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcomponents-core/4.0/httpcomponents-core-4.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcomponents-core/4.0/httpcomponents-core-4.0-sources.jar!/" />
+      </SOURCES>
+    </library>
   </component>
   <UsedPathMacros>
     <macro name="MAVEN_REPOSITORY" description="Maven Local Repostiry" />

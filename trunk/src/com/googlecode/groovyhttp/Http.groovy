@@ -33,6 +33,7 @@ import org.apache.http.HttpResponseInterceptor
  * new Http().get(url){ get-> xxx }* When a closure is used, the get method return the return value of the get method rather than the Http instance. If
  * you want to return the Http instance, use:
  *  new Http().get(url){ get, client -> xxx; client }*/
+@Grab(group='com.jidesoft', module='jide-oss', version='[2.2.1,2.3.0)')
 public class Http {
   static Log logger = LogFactory.getLog(Http.class)
   // Firefox 3 on Windows Vista
