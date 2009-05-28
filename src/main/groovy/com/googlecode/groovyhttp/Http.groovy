@@ -21,6 +21,7 @@ import org.apache.http.protocol.HTTP
 import org.apache.http.protocol.HttpContext
 import org.apache.http.HttpResponseInterceptor
 import org.apache.http.HttpResponse
+import org.apache.http.entity.InputStreamEntity
 
 /**
  * This HTTP Client is designed to provide a set of very simple API for use in Groovy.
@@ -39,7 +40,7 @@ public class Http {
   static Log logger = LogFactory.getLog(Http.class)
   // Firefox 3 on Windows Vista
   static final String USER_AGENT = 'Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.0.1) Gecko/2008070208 Firefox/3.0.1'
-  def httpclient;
+  def httpClient;
   def enableBuffer = true, reset = false
   def referer, uri, request, source;// instance of the last fetched HTTP elements
   @Delegate HttpEntity entity;
@@ -50,8 +51,8 @@ public class Http {
    *   requestInterceptor - HttpRequestInterceptor
    */
   def Http(Map params = null) {
-    httpclient = new DefaultHttpClient()
-    httpclient.addRequestInterceptor(params?.'requestInterceptor' ?: {HttpRequest request, HttpContext context ->
+    httpClient = params?.'httpClient'?:new DefaultHttpClient()
+    httpClient.addRequestInterceptor(params?.'requestInterceptor' ?: {HttpRequest request, HttpContext context ->
       request.setHeader('User-Agent', params?.'User-Agent' ?: System.getProperty('http.user-agent') ?: USER_AGENT)
       if (params?.containsKey('Accept') || System.getProperty('http.accept'))
         request.setHeader('Accept', params?.'Accept' ?: System.getProperty('http.accept') ?: System.getProperty('http.accept') ?: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
@@ -59,15 +60,35 @@ public class Http {
         request.setHeader('Accept-Language', params?.'Accept-Language' ?: System.getProperty('http.accept-language') ?: "en-us,en;q=0.5")
       if (params?.containsKey('Accept-Encoding') || System.getProperty('http.accept-encoding'))
         request.setHeader('Accept-Encoding', params?.'Accept-Encoding' ?: System.getProperty('http.accept-encoding') ?: "ISO-8859-1,utf-8;q=0.7,*;q=0.7")
+
+      params?.get('headers')?.each {k, v -> request.setHeader(k, v)}
     } as HttpRequestInterceptor)
     if (params?.containsKey('buffer')) this.enableBuffer = params.'buffer'
     if (params?.'responseInterceptor' && params.'responseInterceptor' instanceof HttpResponseInterceptor) {
-      httpclient.addResponseInterceptor(params.'responseInterceptor')
+      httpClient.addResponseInterceptor(params.'responseInterceptor')
     }
-    /* httpclient.addResponseInterceptor(params?.'requestInterceptor' ?: {HttpResponse response, HttpContext context ->
+    /* httpClient.addResponseInterceptor(params?.'requestInterceptor' ?: {HttpResponse response, HttpContext context ->
     if (logger.isTraceEnabled()) logger.trace("\t[response] - header.'Set-Cookie': ${response.getHeaders('Set-Cookie')}")
   } as HttpResponseInterceptor)*/
 
+  }
+
+  def post(requestUri, InputStream stream, Closure closure = null) {
+    reset()
+    uri = requestUri instanceof URI ? requestUri : new URI(requestUri)
+    request = new HttpPost(uri)
+    def result = this;
+    request.setEntity(new InputStreamEntity(stream, -1))//TODO see if it is necessary to set contentType and chunked
+    if (referer) request.setHeader('Referer', referer)
+
+    response = httpClient.execute(request)
+    if (logger.isDebugEnabled()) logger.debug("post() - uri: $uri, cookies.size(): ${httpClient.cookieStore.cookies?.size()}, stream.class: ${stream.getClass()}")
+    entity = enableBuffer ? new BufferedHttpEntity(response.getEntity()) : response.getEntity()
+    this.reset = false;
+    if (closure) { result = callClosure(closure, [request, entity, this]) }
+    //entity?.consumeContent()
+
+    return result;
   }
 
   def post(requestUri, params = null, Closure closure = null) {
@@ -80,8 +101,8 @@ public class Http {
     if (referer) request.setHeader('Referer', referer)
 
 
-    response = httpclient.execute(request)
-    if (logger.isDebugEnabled()) logger.debug("post() - uri: $uri, cookies.size(): ${httpclient.cookieStore.cookies?.size()}, nameValues: $nameValues")
+    response = httpClient.execute(request)
+    if (logger.isDebugEnabled()) logger.debug("post() - uri: $uri, cookies.size(): ${httpClient.cookieStore.cookies?.size()}, nameValues: $nameValues")
     entity = enableBuffer ? new BufferedHttpEntity(response.getEntity()) : response.getEntity()
     this.reset = false;
     if (closure) { result = callClosure(closure, [request, entity, this]) }
@@ -96,8 +117,8 @@ public class Http {
     def result = this;
     request = new HttpGet(uri)
     if (referer) request.setHeader('Referer', uri.toString())
-    if (logger.isDebugEnabled()) logger.debug("get() - uri: $uri, cookies.size(): ${httpclient.cookieStore.cookies?.size()}")
-    response = httpclient.execute(request)
+    if (logger.isDebugEnabled()) logger.debug("get() - uri: $uri, cookies.size(): ${httpClient.cookieStore.cookies?.size()}")
+    response = httpClient.execute(request)
     entity = enableBuffer ? new BufferedHttpEntity(response.getEntity()) : response.getEntity()
     this.reset = false;
     if (closure) {
@@ -158,7 +179,7 @@ public class Http {
   /**
    * if params = null, return the root 'html' element
    */
-  def getElement(params=null) {
+  def getElement(params = null) {
     if (params == null) {
       return getSource();
     } else if (params instanceof Collection) {
@@ -193,7 +214,7 @@ public class Http {
   /**
    * For map and collection, they return the accumulated elements
    */
-  def getElements(params=null) {
+  def getElements(params = null) {
     if (params == null) {
       return getSource().getAllElements()
     } else if (params instanceof Integer) {
@@ -253,7 +274,7 @@ public class Http {
    */
   def close() { reset(); return this; }
 
-  def shutdown() {reset(); httpclient.connectionManager.shutdown(); return this}
+  def shutdown() {reset(); httpClient.connectionManager.shutdown(); return this}
 
 
 

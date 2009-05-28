@@ -4,6 +4,7 @@ import org.apache.http.client.methods.HttpGet
 import org.apache.http.HttpEntity
 import net.htmlparser.jericho.HTMLElementName
 import net.htmlparser.jericho.Source
+import org.apache.log4j.BasicConfigurator
 
 public class HttpTests extends GroovyTestCase {
   static TEST_URL = "http://code.google.com/p/groovy-http/"
@@ -93,4 +94,10 @@ public class HttpTests extends GroovyTestCase {
     assertNull http.entity
   }
 
+
+  void XtestCustomHeader(){
+    BasicConfigurator.configure()
+    def http = new Http(headers:['foo':'bar'])
+    http.get(TEST_URL)    
+  }
 }
