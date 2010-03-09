@@ -37,7 +37,7 @@ import org.apache.http.entity.InputStreamEntity
  *  new Http().get(url){ get, client -> xxx; client }*/
 //@Grab(group='com.jidesoft', module='jide-oss', version='[2.2.1,2.3.0)')
 public class Http{
-  static Log logger = LogFactory.getLog(Http.class)
+  static Log log = LogFactory.getLog(Http.class)
   // Firefox 3 on Windows Vista
   static final String USER_AGENT = 'Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.0.1) Gecko/2008070208 Firefox/3.0.1'
   def httpClient;
@@ -84,7 +84,7 @@ public class Http{
     if (referer) request.setHeader('Referer', referer)
 
     response = httpClient.execute(request)
-    if (logger.isDebugEnabled()) logger.debug("post() - uri: $uri, cookies.size(): ${httpClient.cookieStore.cookies?.size()}, stream.class: ${stream.getClass()}")
+    if (log.isDebugEnabled()) log.debug("post() - uri: $uri, cookies.size(): ${httpClient.cookieStore.cookies?.size()}, stream.class: ${stream.getClass()}")
     entity = enableBuffer ? new BufferedHttpEntity(response.getEntity()) : response.getEntity()
     this.reset = false;
     if (closure){ result = callClosure(closure, [request, entity, this]) }
@@ -104,7 +104,7 @@ public class Http{
 
 
     response = httpClient.execute(request)
-    if (logger.isDebugEnabled()) logger.debug("post() - uri: $uri, cookies.size(): ${httpClient.cookieStore.cookies?.size()}, nameValues: $nameValues")
+    if (log.isDebugEnabled()) log.debug("post() - uri: $uri, cookies.size(): ${httpClient.cookieStore.cookies?.size()}, nameValues: $nameValues")
     entity = enableBuffer ? new BufferedHttpEntity(response.getEntity()) : response.getEntity()
     this.reset = false;
     if (closure){ result = callClosure(closure, [request, entity, this]) }
@@ -119,7 +119,7 @@ public class Http{
     def result = this;
     request = new HttpGet(uri)
     if (referer) request.setHeader('Referer', uri.toString())
-    if (logger.isDebugEnabled()) logger.debug("get() - uri: $uri, cookies.size(): ${httpClient.cookieStore.cookies?.size()}")
+    if (log.isDebugEnabled()) log.debug("get() - uri: $uri, cookies.size(): ${httpClient.cookieStore.cookies?.size()}")
     response = httpClient.execute(request)
     entity = enableBuffer ? new BufferedHttpEntity(response.getEntity()) : response.getEntity()
     this.reset = false;
