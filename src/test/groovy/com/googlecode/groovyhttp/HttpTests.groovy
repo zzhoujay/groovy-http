@@ -5,6 +5,7 @@ import org.apache.http.HttpEntity
 import net.htmlparser.jericho.HTMLElementName
 import net.htmlparser.jericho.Source
 import org.apache.log4j.BasicConfigurator
+import org.apache.http.entity.BufferedHttpEntity
 
 public class HttpTests extends GroovyTestCase {
   static TEST_URL = "http://code.google.com/p/groovy-http/"
@@ -89,6 +90,8 @@ public class HttpTests extends GroovyTestCase {
 
   void testClose(){
     def http = new Http(enableBuffer:true).get(TEST_URL)
+    assertNotNull http.entity
+    assertEquals BufferedHttpEntity.class, http.entity.getClass()
     assertNotNull http.entity.content
     http.close()
     assertNull http.entity
