@@ -22,6 +22,7 @@ import org.apache.http.protocol.HttpContext
 import org.apache.http.HttpResponseInterceptor
 import org.apache.http.HttpResponse
 import org.apache.http.entity.InputStreamEntity
+import com.googlecode.groovyhttp.util.HttpPostUtil
 
 /**
  * This HTTP Client is designed to provide a set of very simple API for use in Groovy.
@@ -98,7 +99,7 @@ public class Http{
     uri = requestUri instanceof URI ? requestUri : new URI(requestUri)
     request = new HttpPost(uri)
     def result = this;
-    def nameValues = parseNameValues(params)
+    def nameValues = HttpPostUtil.parseNameValues(params)
     request.setEntity(new UrlEncodedFormEntity(nameValues, HTTP.UTF_8))
     if (referer) request.setHeader('Referer', referer)
 
@@ -127,25 +128,6 @@ public class Http{
       result = callClosure(closure, [request, entity, this])
     }
     //entity?.consumeContent()
-    return result;
-  }
-
-
-  static List<NameValuePair> parseNameValues(input){
-    def result = []
-    if (input instanceof NameValuePair){
-      result << input;
-    } else if (input instanceof FormFields){
-      //println "parseNameValues() - FormFields - input: ${input.getClass()}, formControls.size(): ${input.formControls.size()}"
-      input.formControls.each { result += parseNameValues(it)}
-    } else if (input instanceof FormControl){
-      //println "parseNameValues() - FormControl - input: ${input.getClass()}, input: ${input}, input.values: ${input.values}, getAttributesMap() : ${input.getPredefinedValues()  }"
-      input.values.each { result << new BasicNameValuePair(input.name, it) }
-    } else if (input instanceof Collection){
-      input.each {result += parseNameValues(it)}
-    } else if (input instanceof Map){
-      input.each {k, v -> result << new BasicNameValuePair(k, v)}
-    }
     return result;
   }
 
