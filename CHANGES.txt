@@ -2,3 +2,8 @@
 2009-05-26      0.1
   - first release, provide basic HTTP Get and Post, and data extraction base on Jericho HTML Parser
   - support Maven
+
+
+2010-03-09      0.2
+  - upgraded dependency library including groovy, apache http core/client, log4j etc.
+  

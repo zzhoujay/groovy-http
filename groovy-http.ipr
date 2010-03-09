@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project relativePaths="true" version="4">
+<project version="4">
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
   </component>
-  <component name="BuildJarProjectSettings">
-    <option name="BUILD_JARS_ON_MAKE" value="true" />
-  </component>
-  <component name="CodeStyleSettingsManager">
-    <option name="PER_PROJECT_SETTINGS" />
-    <option name="USE_PER_PROJECT_SETTINGS" value="false" />
+  <component name="ArtifactManager">
+    <artifact name="groovy-http:jar">
+      <output-path>$PROJECT_DIR$/../../intellij-grails-apps/iugotech-apps/search/lib</output-path>
+      <root id="root">
+        <element id="archive" name="groovy-http-20090416a.jar">
+          <element id="module-output" name="groovy-http" />
+        </element>
+      </root>
+    </artifact>
   </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
-    <option name="DEPLOY_AFTER_MAKE" value="0" />
     <resourceExtensions>
       <entry name=".+\.(properties|xml|html|dtd|tld)" />
       <entry name=".+\.(gif|png|jpeg|jpg)" />
@@ -29,6 +31,7 @@
       <entry name="?*.tld" />
       <entry name="?*.ftl" />
     </wildcardResourcePatterns>
+    <annotationProcessing enabled="false" useClasspath="true" />
   </component>
   <component name="CopyrightManager" default="">
     <module2copyright />
@@ -45,18 +48,6 @@
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="IdProvider" IDEtalkID="4DFA88235565522C7C8856A93830254C" />
-  <component name="InspectionProjectProfileManager">
-    <option name="PROJECT_PROFILE" value="Project Default" />
-    <option name="USE_PROJECT_LEVEL_SETTINGS" value="false" />
-    <scopes />
-    <profiles>
-      <profile version="1.0" is_locked="false">
-        <option name="myName" value="Project Default" />
-        <option name="myLocal" value="false" />
-      </profile>
-    </profiles>
-    <list size="0" />
-  </component>
   <component name="JavacSettings">
     <option name="DEBUGGING_INFO" value="true" />
     <option name="GENERATE_NO_WARNINGS" value="false" />
@@ -220,7 +211,6 @@
   <component name="ProjectDetails">
     <option name="projectName" value="groovy-http" />
   </component>
-  <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectKey">
     <option name="state" value="project://D:\projects\intellij-groovy\groovy-http\groovy-http.ipr" />
   </component>
@@ -239,13 +229,6 @@
       </value>
     </option>
   </component>
-  <component name="RmicSettings">
-    <option name="IS_EANABLED" value="false" />
-    <option name="DEBUGGING_INFO" value="true" />
-    <option name="GENERATE_NO_WARNINGS" value="false" />
-    <option name="GENERATE_IIOP_STUBS" value="false" />
-    <option name="ADDITIONAL_OPTIONS_STRING" value="" />
-  </component>
   <component name="SvnBranchConfigurationManager">
     <option name="myVersion" value="124" />
     <option name="mySupportsUserInfoFilter" value="true" />
@@ -255,17 +238,6 @@
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="libraryTable">
-    <library name="Maven: org.codehaus.groovy:groovy:1.6.3">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/groovy/groovy/1.6.3/groovy-1.6.3.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/groovy/groovy/1.6.3/groovy-1.6.3-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/groovy/groovy/1.6.3/groovy-1.6.3-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: antlr:antlr:2.7.7">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/antlr/antlr/2.7.7/antlr-2.7.7.jar!/" />
@@ -277,17 +249,6 @@
         <root url="jar://$MAVEN_REPOSITORY$/antlr/antlr/2.7.7/antlr-2.7.7-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: asm:asm:2.2.3">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/asm/asm/2.2.3/asm-2.2.3.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/asm/asm/2.2.3/asm-2.2.3-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/asm/asm/2.2.3/asm-2.2.3-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: junit:junit:4.5">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.5/junit-4.5.jar!/" />
@@ -297,61 +258,6 @@
       </JAVADOC>
       <SOURCES>
         <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.5/junit-4.5-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.apache.ant:ant:1.7.1">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant/1.7.1/ant-1.7.1.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant/1.7.1/ant-1.7.1-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant/1.7.1/ant-1.7.1-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.apache.ant:ant-launcher:1.7.1">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant-launcher/1.7.1/ant-launcher-1.7.1.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant-launcher/1.7.1/ant-launcher-1.7.1-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/ant/ant-launcher/1.7.1/ant-launcher-1.7.1-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: asm:asm-util:2.2.3">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-util/2.2.3/asm-util-2.2.3.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-util/2.2.3/asm-util-2.2.3-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-util/2.2.3/asm-util-2.2.3-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: asm:asm-tree:2.2.3">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-tree/2.2.3/asm-tree-2.2.3.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-tree/2.2.3/asm-tree-2.2.3-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-tree/2.2.3/asm-tree-2.2.3-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: asm:asm-analysis:2.2.3">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-analysis/2.2.3/asm-analysis-2.2.3.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-analysis/2.2.3/asm-analysis-2.2.3-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-analysis/2.2.3/asm-analysis-2.2.3-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: jline:jline:0.9.94">
@@ -376,39 +282,6 @@
         <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: log4j:log4j:1.2.8">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.8/log4j-1.2.8.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.8/log4j-1.2.8-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.8/log4j-1.2.8-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.apache.httpcomponents:httpcore:4.0">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.0/httpcore-4.0.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.0/httpcore-4.0-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.0/httpcore-4.0-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: org.apache.httpcomponents:httpclient:4.0-beta2">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.0-beta2/httpclient-4.0-beta2.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.0-beta2/httpclient-4.0-beta2-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.0-beta2/httpclient-4.0-beta2-sources.jar!/" />
-      </SOURCES>
-    </library>
     <library name="Maven: commons-codec:commons-codec:1.3">
       <CLASSES>
         <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.3/commons-codec-1.3.jar!/" />
@@ -431,9 +304,116 @@
         <root url="jar://$MAVEN_REPOSITORY$/net/htmlparser/jericho/jericho-html/3.0/jericho-html-3.0-sources.jar!/" />
       </SOURCES>
     </library>
+    <library name="Maven: org.codehaus.groovy:groovy:1.7.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/groovy/groovy/1.7.1/groovy-1.7.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/groovy/groovy/1.7.1/groovy-1.7.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/groovy/groovy/1.7.1/groovy-1.7.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: asm:asm:3.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm/3.2/asm-3.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm/3.2/asm-3.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm/3.2/asm-3.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: asm:asm-commons:3.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-commons/3.2/asm-commons-3.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-commons/3.2/asm-commons-3.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-commons/3.2/asm-commons-3.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: asm:asm-tree:3.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-tree/3.2/asm-tree-3.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-tree/3.2/asm-tree-3.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-tree/3.2/asm-tree-3.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: asm:asm-util:3.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-util/3.2/asm-util-3.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-util/3.2/asm-util-3.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-util/3.2/asm-util-3.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: asm:asm-analysis:3.2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-analysis/3.2/asm-analysis-3.2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-analysis/3.2/asm-analysis-3.2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/asm/asm-analysis/3.2/asm-analysis-3.2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.fusesource.jansi:jansi:1.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/fusesource/jansi/jansi/1.1/jansi-1.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/fusesource/jansi/jansi/1.1/jansi-1.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/fusesource/jansi/jansi/1.1/jansi-1.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: log4j:log4j:1.2.15">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.15/log4j-1.2.15.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.15/log4j-1.2.15-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.15/log4j-1.2.15-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.httpcomponents:httpcore:4.0.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.apache.httpcomponents:httpclient:4.0.1">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.0.1/httpclient-4.0.1.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.0.1/httpclient-4.0.1-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpclient/4.0.1/httpclient-4.0.1-sources.jar!/" />
+      </SOURCES>
+    </library>
   </component>
-  <UsedPathMacros>
-    <macro name="MAVEN_REPOSITORY" description="Maven Local Repostiry" />
-  </UsedPathMacros>
 </project>
 
