@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.google.code</groupId>
     <artifactId>groovy-http</artifactId>
-    <version>0.1</version>
+    <version>0.2</version>
     <url>http://code.google.com/p/groovy-http/</url>
     <packaging>jar</packaging>
     <licenses>
@@ -51,16 +51,16 @@
                 </exclusion>
             </exclusions>
         </dependency>
-         <dependency>
-                <groupId>org.apache.httpcomponents</groupId>
-                <artifactId>httpcore</artifactId>
-                <version>4.0.1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.httpcomponents</groupId>
-                <artifactId>httpclient</artifactId>
-                <version>4.0.1</version>
-            </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.0.1</version>
+        </dependency>
 
         <dependency>
             <groupId>net.htmlparser.jericho</groupId>
@@ -68,6 +68,14 @@
             <version>3.0</version>
         </dependency>
 
+
+        <!-- Test -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>3.0.1.RELEASE</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

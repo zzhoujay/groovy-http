@@ -36,22 +36,24 @@ import org.apache.http.entity.InputStreamEntity
  * you want to return the Http instance, use:
  *  new Http().get(url){ get, client -> xxx; client }*/
 //@Grab(group='com.jidesoft', module='jide-oss', version='[2.2.1,2.3.0)')
-public class Http {
+public class Http{
   static Log logger = LogFactory.getLog(Http.class)
   // Firefox 3 on Windows Vista
   static final String USER_AGENT = 'Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.0.1) Gecko/2008070208 Firefox/3.0.1'
   def httpClient;
   def enableBuffer = true, reset = false
   def referer, uri, request, source;// instance of the last fetched HTTP elements
-  @Delegate HttpEntity entity;
-  @Delegate HttpResponse response;
+  HttpEntity entity;
+  HttpResponse response;
+
+  def Http(){ this(null)}
 
   /**
    * Accepted params
    *   requestInterceptor - HttpRequestInterceptor
    */
-  def Http(Map params = null) {
-    httpClient = params?.'httpClient'?:new DefaultHttpClient()
+  def Http(Map params){
+    httpClient = params?.'httpClient' ?: new DefaultHttpClient()
     httpClient.addRequestInterceptor(params?.'requestInterceptor' ?: {HttpRequest request, HttpContext context ->
       request.setHeader('User-Agent', params?.'User-Agent' ?: System.getProperty('http.user-agent') ?: USER_AGENT)
       if (params?.containsKey('Accept') || System.getProperty('http.accept'))
@@ -64,7 +66,7 @@ public class Http {
       params?.get('headers')?.each {k, v -> request.setHeader(k, v)}
     } as HttpRequestInterceptor)
     if (params?.containsKey('buffer')) this.enableBuffer = params.'buffer'
-    if (params?.'responseInterceptor' && params.'responseInterceptor' instanceof HttpResponseInterceptor) {
+    if (params?.'responseInterceptor' && params.'responseInterceptor' instanceof HttpResponseInterceptor){
       httpClient.addResponseInterceptor(params.'responseInterceptor')
     }
     /* httpClient.addResponseInterceptor(params?.'requestInterceptor' ?: {HttpResponse response, HttpContext context ->
@@ -73,7 +75,7 @@ public class Http {
 
   }
 
-  def post(requestUri, InputStream stream, Closure closure = null) {
+  def post(requestUri, InputStream stream, Closure closure = null){
     reset()
     uri = requestUri instanceof URI ? requestUri : new URI(requestUri)
     request = new HttpPost(uri)
@@ -85,13 +87,13 @@ public class Http {
     if (logger.isDebugEnabled()) logger.debug("post() - uri: $uri, cookies.size(): ${httpClient.cookieStore.cookies?.size()}, stream.class: ${stream.getClass()}")
     entity = enableBuffer ? new BufferedHttpEntity(response.getEntity()) : response.getEntity()
     this.reset = false;
-    if (closure) { result = callClosure(closure, [request, entity, this]) }
+    if (closure){ result = callClosure(closure, [request, entity, this]) }
     //entity?.consumeContent()
 
     return result;
   }
 
-  def post(requestUri, params = null, Closure closure = null) {
+  def post(requestUri, params = null, Closure closure = null){
     reset()
     uri = requestUri instanceof URI ? requestUri : new URI(requestUri)
     request = new HttpPost(uri)
@@ -105,13 +107,13 @@ public class Http {
     if (logger.isDebugEnabled()) logger.debug("post() - uri: $uri, cookies.size(): ${httpClient.cookieStore.cookies?.size()}, nameValues: $nameValues")
     entity = enableBuffer ? new BufferedHttpEntity(response.getEntity()) : response.getEntity()
     this.reset = false;
-    if (closure) { result = callClosure(closure, [request, entity, this]) }
+    if (closure){ result = callClosure(closure, [request, entity, this]) }
     //entity?.consumeContent()
 
     return result;
   }
 
-  def get(requestUri, Closure closure = null) {
+  def get(requestUri, Closure closure = null){
     reset()
     uri = requestUri instanceof URI ? requestUri : new URI(requestUri)
     def result = this;
@@ -121,7 +123,7 @@ public class Http {
     response = httpClient.execute(request)
     entity = enableBuffer ? new BufferedHttpEntity(response.getEntity()) : response.getEntity()
     this.reset = false;
-    if (closure) {
+    if (closure){
       result = callClosure(closure, [request, entity, this])
     }
     //entity?.consumeContent()
@@ -129,19 +131,19 @@ public class Http {
   }
 
 
-  static List<NameValuePair> parseNameValues(input) {
+  static List<NameValuePair> parseNameValues(input){
     def result = []
-    if (input instanceof NameValuePair) {
+    if (input instanceof NameValuePair){
       result << input;
-    } else if (input instanceof FormFields) {
+    } else if (input instanceof FormFields){
       //println "parseNameValues() - FormFields - input: ${input.getClass()}, formControls.size(): ${input.formControls.size()}"
       input.formControls.each { result += parseNameValues(it)}
-    } else if (input instanceof FormControl) {
+    } else if (input instanceof FormControl){
       //println "parseNameValues() - FormControl - input: ${input.getClass()}, input: ${input}, input.values: ${input.values}, getAttributesMap() : ${input.getPredefinedValues()  }"
       input.values.each { result << new BasicNameValuePair(input.name, it) }
-    } else if (input instanceof Collection) {
+    } else if (input instanceof Collection){
       input.each {result += parseNameValues(it)}
-    } else if (input instanceof Map) {
+    } else if (input instanceof Map){
       input.each {k, v -> result << new BasicNameValuePair(k, v)}
     }
     return result;
@@ -153,23 +155,23 @@ public class Http {
    *
    * <b>Warning</b> this method may retrieve from the Http stream
    */
-  def size() {
+  def size(){
     def contentLength = entity?.getContentLength();
-    if (contentLength > -1) {
+    if (contentLength > -1){
       return contentLength;
-    } else {
+    } else{
       buffer = new ByteArrayOutputStream()
       buffer << entity?.content
       return buffer.size()
     }
   }
 
-  def getText() {
+  def getText(){
     if (entity) return new StringWriter().with {out -> out << entity.content; out}.toString()
   }
 
-  def getSource() {
-    if (!source) {
+  def getSource(){
+    if (!source){
       source = new Source(entity.content)
       entity.consumeContent()
     }
@@ -179,33 +181,33 @@ public class Http {
   /**
    * if params = null, return the root 'html' element
    */
-  def getElement(params = null) {
-    if (params == null) {
+  def getElement(params = null){
+    if (params == null){
       return getSource();
-    } else if (params instanceof Collection) {
+    } else if (params instanceof Collection){
       throw new IllegalArgumentException("getElement() doesn't accept a Collection as argument")
-    } else if (params instanceof Map) {
-      if (params.size() == 1) {
+    } else if (params instanceof Map){
+      if (params.size() == 1){
         def entries = params.entrySet().toArray(), key = entries[0].key, value = entries[0].value
         return getSource().getAllElements(key, value, false)?.getAt(0)
       } else throw new UnsupportedOperationException("multiple value map is not implemented")
-    } else if (params instanceof Closure) {
+    } else if (params instanceof Closure){
       return callClosure(params, [getSource(), this])
-    } else {
+    } else{
       //assume the parameter is an ID
       return getSource()?.getElementById(params)
     }
     def elements = getElements(params)
-    if (elements instanceof Collection) { return elements.getAt(0)}
+    if (elements instanceof Collection){ return elements.getAt(0)}
   }
 
-  def getElement(String tag, Map attrs) {
+  def getElement(String tag, Map attrs){
     if (attrs?.size() != 1) throw new UnsupportedOperationException("attrs must contain exactly 1 entry")
     def entry = attrs.entrySet().toList()?.getAt(0)
     return getElements(tag).findAll {it.getAttributeValue(entry.key) == entry.value}?.getAt(0)
   }
 
-  def getElements(String tag, Map attrs) {
+  def getElements(String tag, Map attrs){
     if (attrs?.size() != 1) throw new UnsupportedOperationException("attrs must contain exactly 1 entry")
     def entry = attrs.entrySet().toList()?.getAt(0)
     return getElements(tag).findAll {it.getAttributeValue(entry.key) == entry.value}
@@ -214,48 +216,48 @@ public class Http {
   /**
    * For map and collection, they return the accumulated elements
    */
-  def getElements(params = null) {
-    if (params == null) {
+  def getElements(params = null){
+    if (params == null){
       return getSource().getAllElements()
-    } else if (params instanceof Integer) {
+    } else if (params instanceof Integer){
       throw new IllegalArgumentException("invalid argument, params: $params, params.class: ${params?.getClass()}")
-    } else if (params instanceof String) {
+    } else if (params instanceof String){
       return getSource().getAllElements(params)
-    } else if (params instanceof Map) { // multi-entry map narrow down the scope of result
+    } else if (params instanceof Map){ // multi-entry map narrow down the scope of result
       def elements = getSource(), result = []
       params.entrySet().each {entry -> result += elements.getAllElements(entry.key, entry.value, false)}
       return result;
-    } else if (params instanceof Collection) {
+    } else if (params instanceof Collection){
       def result = []
       params.each {result += getElements(it)}
       return result;
-    } else if (params instanceof Closure) {
+    } else if (params instanceof Closure){
       return callClosure(params, [getSource(), this])
-    } else {
+    } else{
       throw new IllegalArgumentException("getForm() - unknown params - params: $params")
     }
   }
 
-  def getForm(params) {
+  def getForm(params){
     //TODO consider to delegate this method to Form
     //TODO refactor this to a generic get element
-    if (params == null) {
+    if (params == null){
       return new Form(this, getSource().getAllElements(HTMLElementName.FORM)?.getAt(0))
-    } else if (params instanceof Integer) {
+    } else if (params instanceof Integer){
       return new Form(this, getSource().getAllElements(HTMLElementName.FORM)?.getAt(params))
-    } else if (params instanceof String) {
+    } else if (params instanceof String){
       def source = getSource()
       def formElement = source.getElementById(params) ?: source.getAllElement('name', params, false)?.getAt(0)
       return new Form(this, formElement)
-    } else if (params instanceof Map) {
+    } else if (params instanceof Map){
       return new Form(this, getElement(params))
-    } else {
+    } else{
       throw new IllegalArgumentException("getForm() - unknown params - params: $params")
     }
   }
 
 
-  def reset() {
+  def reset(){
     if (reset) return; //skip if reset already
     this.entity?.consumeContent()
     this.entity = null;
@@ -268,19 +270,18 @@ public class Http {
     return this;
   }
 
-
   /**
    * getSource() will also trigger close
    */
-  def close() { reset(); return this; }
+  def close(){ reset(); return this; }
 
-  def shutdown() {reset(); httpClient.connectionManager.shutdown(); return this}
+  def shutdown(){reset(); httpClient.connectionManager.shutdown(); return this}
 
 
 
-  static callClosure(Closure closure, List arguments) {
+  static callClosure(Closure closure, List arguments){
     def result;
-    switch (closure.parameterTypes.length) {
+    switch (closure.parameterTypes.length){
       case 0: result = closure(arguments?.getAt(0)); break;
       case 1: result = closure(arguments?.getAt(0)); break;
       case 2: result = closure(arguments?.getAt(0), arguments?.getAt(1)); break;

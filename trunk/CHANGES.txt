@@ -6,4 +6,8 @@
 
 2010-03-09      0.2
   - upgraded dependency library including groovy, apache http core/client, log4j etc.
-  
+  - remove @Delegate methods from http. i.e. the Http instsance won't have the HttpEntity and HttpResponse methods
+    anymore. It is because HttpResponse has a getEntity method that override the getEntity of the base Http class. And
+    response delegate is also removed for code consistency.
+
+    
