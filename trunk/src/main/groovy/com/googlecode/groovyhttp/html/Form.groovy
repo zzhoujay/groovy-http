@@ -24,7 +24,7 @@ public class Form {
   def submit(nameValues, Closure closure = null) {
     def result = http, action = base?.resolve(element.getAttributeValue("action"))
     if (!action) new IllegalStateException("form has no valid action attribute")
-    FormFields fields = fill(element.findFormFields(), nameValues)
+    FormFields fields = fill(element.getFormFields(), nameValues)
     if (logger.isTraceEnabled()) logger.trace("submit() - action: $action, nameValues: $nameValues")
     return http.post(action, fields, closure);
   }

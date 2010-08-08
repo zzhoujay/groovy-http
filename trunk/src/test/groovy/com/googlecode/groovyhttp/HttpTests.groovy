@@ -73,7 +73,7 @@ public class HttpTests extends GroovyTestCase {
   }
 
   void testGetElementTwoArgs() {
-    assertTrue new Http().get(TEST_URL).getElement('td', ['id': 'project_labels']).textExtractor.toString().contains("groovy")
+    assertTrue new Http().get(TEST_URL).getElement('td', ['id': 'project_labels'])?.textExtractor.toString().contains("groovy")
   }
 
   void testGetElementsTwoArgs() {
