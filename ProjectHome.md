@@ -1,0 +1,1 @@
+This project is a mix of Groovy, Apache Http Core+Client 4, and Jericho HTML Parser. It aims at providing a set of Groovy-ish API for using Apache HTTP Client and extract content with Jericho HTML Parser
